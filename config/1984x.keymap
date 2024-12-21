@@ -82,13 +82,27 @@
     j2u_2: jis_to_us_N2 {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&kp 2>, <&kp LBKT>;
+      bindings = <&kp N2>, <&kp LBKT>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     // 7(&) : shiftが他のキーのshift（他 8 等）
     // &xx N7 N6 // つまりAMPS 
+    j2u_7: jis_to_us_N7 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp N7>, <&kp N6>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
     // =(+) : 他のキーのshift、shiftも他のキーのshift（他 ` 等）
     // &xx MINUS SEMI
+    j2u_EQUAL: jis_to_us_EQUAL {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp LS(MINUS)>, <&kp SEMI>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
     // shift + 長押しの挙動
     //   shiftを離す : shiftを押していない状態の長押しに変わる
     // 長押し後にshiftを押す
@@ -194,7 +208,7 @@
 
     num_layer {
       bindings = <
-   &kp N1           &j2u_2           &kp N3           &kp N4           &kp N5                   &kp N6           &kp N7           &kp N8           &kp N9           &kp N0
+   &kp N1           &j2u_2           &kp N3           &kp N4           &kp N5                   &kp N6           &j2u_7           &kp N8           &kp N9           &kp N0
    &kp TILDE        &kp AMPS         &kp LPAR         &kp LBRC         &kp LBKT                 &kp PLUS         &kp MINUS        &kp SEMI         &kp STAR         &kp EXCL
    &hm LCTRL GRAVE  &hm LSFT PIPE    &kp RPAR         &kp RBRC         &kp RBKT                 &kp EQUAL        &kp UNDER        &kp COLON        &hm RGUI DLLR    &hmt RCTRL BSLH
                                      &mo SYSTEM       &trans           &trans                   &trans           &trans           &trans
@@ -204,7 +218,7 @@
     nav_layer {
       bindings = <
    &none            &none            &none            &none            &none                    &vol_dn          &vol_up          &kp C_PP         &none            &kp DEL
-   &none            &none            &none            &none            &none                    &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp PG_UP
+   &none            &none            &none            &none            j2u_EQUAL                &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp PG_UP
    &kp LCTRL        &kp LSFT         &none            &none            &none                    &kp HOME         &kp END          &kp K_APP        &kp INS          &kp PG_DN
                                      &kp LALT         &trans           &mt LGUI LA(BSPC)        &trans           &trans           &mo SYSTEM
       >;
