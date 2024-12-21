@@ -42,6 +42,14 @@
              , <&macro_tap &kp N##num>; \
   };
 
+#define J2U_N_S(NAME, NKEY, SKEY) \
+  j2u_##NAME: jis_to_us_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    \#binding-cells = <0>; \
+    bindings = <&kp ##NKEY>, <&kp ##SKEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+  };
+
 / {
   macros {
     SPACE_NUM(0)
@@ -76,13 +84,6 @@
   };
 
   behaviors {
-    #define J2U_N_S(NAME, NKEY, SKEY) \
-      j2u_##NAME: jis_to_us_##NAME { \
-      compatible = "zmk,behavior-mod-morph"; \
-      #binding-cells = <0>; \
-      bindings = <&kp ##NKEY>, <&kp ##SKEY>; \
-      mods = <(MOD_LSFT|MOD_RSFT)>; \
-    };
     // パターン
     // 2(@) : shiftが他のキー（他 6 等）
     // &xx N2 LBKT // [
