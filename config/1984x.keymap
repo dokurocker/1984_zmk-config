@@ -76,6 +76,13 @@
   };
 
   behaviors {
+    #define J2U_N_S(NAME, NKEY, SKEY) \
+      j2u_##NAME: jis_to_us_##NAME { \
+      compatible = "zmk,behavior-mod-morph"; \
+      #binding-cells = <0>; \
+      bindings = <&kp ##NKEY>, <&kp ##SKEY>; \
+      mods = <(MOD_LSFT|MOD_RSFT)>; \
+    };
     // パターン
     // 2(@) : shiftが他のキー（他 6 等）
     // &xx N2 LBKT // [
@@ -85,6 +92,8 @@
       bindings = <&kp N2>, <&kp LBKT>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    J2U_N_S(6, N6, EQUAL)
+
     // 7(&) : shiftが他のキーのshift（他 8 等）
     // &xx N7 N6 // つまりAMPS 
     j2u_7: jis_to_us_N7 {
