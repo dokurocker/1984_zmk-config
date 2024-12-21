@@ -96,13 +96,13 @@
     };
     // =(+) : 他のキーのshift、shiftも他のキーのshift（他 ` 等）
     // &xx MINUS SEMI
-    // j2u_EQUAL: jis_to_us_EQUAL {
-    //   compatible = "zmk,behavior-mod-morph";
-    //   #binding-cells = <0>;
-    //   bindings = <&kp LS(MINUS)>, <&kp SEMI>;
-    //   mods = <(MOD_LSFT|MOD_RSFT)>;
-    //   keep-mods = <(MOD_LSFT|MOD_RSFT)>;
-    // };
+    j2u_EQUAL: jis_to_us_EQUAL {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp LS(MINUS)>, <&kp SEMI>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+      keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+    :};
     // shift + 長押しの挙動
     //   shiftを離す : shiftを押していない状態の長押しに変わる
     // 長押し後にshiftを押す
@@ -218,7 +218,7 @@
     nav_layer {
       bindings = <
    &none            &none            &none            &none            &none                    &vol_dn          &vol_up          &kp C_PP         &none            &kp DEL
-   &none            &none            &none            &none            j2u_EQUAL                &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp PG_UP
+   &none            &none            &none            &none            &j2u_EQUAL                &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp PG_UP
    &kp LCTRL        &kp LSFT         &none            &none            &none                    &kp HOME         &kp END          &kp K_APP        &kp INS          &kp PG_DN
                                      &kp LALT         &trans           &mt LGUI LA(BSPC)        &trans           &trans           &mo SYSTEM
       >;
