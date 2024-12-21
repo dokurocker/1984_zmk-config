@@ -46,7 +46,7 @@
   j2u_##NAME: jis_to_us_##NAME { \
     compatible = "zmk,behavior-mod-morph"; \
     \#binding-cells = <0>; \
-    bindings = <&kp ##NKEY>, <&kp ##SKEY>; \
+    bindings = <&kp NKEY>, <&kp SKEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
   };
 
