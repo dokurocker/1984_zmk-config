@@ -76,6 +76,24 @@
   };
 
   behaviors {
+    // パターン
+    // 2(@) : shiftが他のキー（他 6 等）
+    // &xx N2 LBKT // [
+    j2u_2: jis_to_us_N2 {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp 2>, <&kp LBKT>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    // 7(&) : shiftが他のキーのshift（他 8 等）
+    // &xx N7 N6 // つまりAMPS 
+    // =(+) : 他のキーのshift、shiftも他のキーのshift（他 ` 等）
+    // &xx MINUS SEMI
+    // shift + 長押しの挙動
+    //   shiftを離す : shiftを押していない状態の長押しに変わる
+    // 長押し後にshiftを押す
+    //   押していたキーはキャンセルされる
+
     lalt_gresc: grave_escape {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
@@ -176,7 +194,7 @@
 
     num_layer {
       bindings = <
-   &kp N1           &kp N2           &kp N3           &kp N4           &kp N5                   &kp N6           &kp N7           &kp N8           &kp N9           &kp N0
+   &kp N1           &j2u_2           &kp N3           &kp N4           &kp N5                   &kp N6           &kp N7           &kp N8           &kp N9           &kp N0
    &kp TILDE        &kp AMPS         &kp LPAR         &kp LBRC         &kp LBKT                 &kp PLUS         &kp MINUS        &kp SEMI         &kp STAR         &kp EXCL
    &hm LCTRL GRAVE  &hm LSFT PIPE    &kp RPAR         &kp RBRC         &kp RBKT                 &kp EQUAL        &kp UNDER        &kp COLON        &hm RGUI DLLR    &hmt RCTRL BSLH
                                      &mo SYSTEM       &trans           &trans                   &trans           &trans           &trans
