@@ -72,6 +72,16 @@
     keep-mods = <(MOD_LSFT|MOD_RSFT)>; \
   };
 
+// dvorak - qwerty
+#define DQ(DVORAK_KEY, QWERTY_KEY) \
+  dq_##DVORAK_KEY: dvorak_qwerty_##DVORAK_KEY { \
+    compatible = "zmk,behavior-mod-morph"; \
+    \#binding-cells = <0>; \
+    bindings = <&kp DVORAK_KEY>, <&kp QWERTY_KEY>; \
+    mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; \
+    keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; \
+  };
+
 / {
   macros {
     SPACE_NUM(0)
@@ -120,6 +130,54 @@
     J2U_NN(SEMI, SEMI, SQT)
     J2U_SS(SQT, N7, N2)
     J2U_SS(GRAVE, LBKT, EQUAL)
+
+    dq_SQT: dvorak_qwerty_SQT {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&j2u_SQT>, <&kp Q>;
+      mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+    };
+    DQ(COMMA, W)
+    DQ(DOT, E)
+    DQ(P, R)
+    DQ(Y, T)
+    DQ(F, Y)
+    DQ(G, U)
+    DQ(C, I)
+    DQ(R, O)
+    DQ(L, P)
+    // DQ(A, A)
+    DQ(O, S)
+    DQ(E, D)
+    DQ(U, F)
+    DQ(I, G)
+    DQ(D, H)
+    DQ(H, J)
+    DQ(T, K)
+    DQ(N, L)
+    dq_S: dvorak_qwerty_S {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&kp S>, <&j2u_SEMI>;
+      mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+    };
+    dq_SEMI: dvorak_qwerty_SEMI {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&j2u_SEMI>, <&kp Z>;
+      mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+      keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>;
+    };
+    DQ(Q, X)
+    DQ(J, C)
+    DQ(K, V)
+    DQ(X, B)
+    DQ(B, N)
+    // DQ(M, M)
+    DQ(V, COMMA)
+    DQ(Z, DOT)
 
     lalt_gresc: grave_escape {
       compatible = "zmk,behavior-mod-morph";
@@ -212,9 +270,9 @@
 
     default_layer {
       bindings = <
-   &j2u_SQT         &kp COMMA        &kp DOT          &kp P            &kp Y                    &kp F            &kp G            &kp C            &kp R            &kp L
-   &kp A            &kp O            &kp E            &kp U            &kp I                    &kp D            &kp H            &kp T            &kp N            &kp S
-   &j2u_SEMI        &kp Q            &kp J            &kp K            &kp X                    &kp B            &kp M            &kp W            &kp V            &kp Z
+   &dq_SQT          &dq_COMMA        &dq_DOT          &dq_P            &dq_Y                    &dq_F            &dq_G            &dq_C            &dq_R           &dq_L
+   &kp A            &dq_O            &dq_E            &dq_U            &dq_I                    &dq_D            &dq_H            &dq_T            &dq_N           &dq_S
+   &dq_SEMI         &dq_Q            &dq_J            &dq_K            &dq_X                    &dq_B            &kp M            &dq_W            &dq_V           &dq_Z
                                      &mt LALT TAB     &lt NUM INT5     &mt LCTRL SPACE          &mt LSHFT ENTER  &lt NAV INT4     &mt LGUI ESC
       >;
     };
