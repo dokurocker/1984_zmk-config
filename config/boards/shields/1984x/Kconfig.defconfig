@@ -1,5 +1,5 @@
 
-if SHIELD_1984X_RIGHT
+if SHIELD_1984X_LEFT
 
 config ZMK_KEYBOARD_NAME
   default "1984x"
