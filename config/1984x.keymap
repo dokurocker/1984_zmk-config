@@ -58,7 +58,7 @@
     keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; \
   };
 
-  conditional_layers {
+  /conditional_layers {
     compatible = "zmk,conditional-layers";
     tri_layer {
       if-layers = <NUM SYMBOL>;
@@ -163,7 +163,7 @@
    &kp N1           &j2u_2           &kp N3           &kp N4           &kp N5                   &j2u_6           &j2u_7           &j2u_8           &j2u_9           &j2u_0
    &kp LCTRL        &kp TAB          &none            &kp LC(LA(DEL))  &none                    &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp RA(RSFT)
    &kp LSFT         &kp F2           &kp F3           &kp F4           &kp F5                   &kp F11          &kp F12          &none            &none            &kp RA(RCTL)
-                                     &mo SYSTEM       &trans           &trans                   &trans           &trans           &trans
+                                     &mo SYSTEM       &trans           &trans                   &kp LS(ENTER)    &trans           &trans
       >;
     };
 
