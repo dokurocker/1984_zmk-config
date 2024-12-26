@@ -58,7 +58,8 @@
     keep-mods = <(MOD_LGUI|MOD_RGUI|MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT)>; \
   };
 
-  /conditional_layers {
+/ {
+    conditional_layers {
     compatible = "zmk,conditional-layers";
     tri_layer {
       if-layers = <NUM SYMBOL>;
