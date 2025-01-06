@@ -155,7 +155,7 @@
    &dq_SQT          &dq_COMMA        &dq_DOT          &dq_P            &dq_Y                    &dq_F            &dq_G            &dq_C            &dq_R           &dq_L
    &kp A            &dq_O            &dq_E            &dq_U            &i_del                   &d_bspc          &dq_H            &dq_T            &dq_N           &dq_S
    &dq_SEMI         &dq_Q            &dq_J            &dq_K            &dq_X                    &dq_B            &kp M            &dq_W            &dq_V           &dq_Z
-                                     &mt LALT TAB     &lt NUM INT5     &mt LCTRL SPACE          &mt LSHFT ENTER  &lt SYMBOL INT4     &mt LGUI ESC
+                                     &mt LALT TAB     &lt NUM INT5     &mt LCTRL SPACE          &mt LSHFT ENTER  &lt SYMBOL INT4  &mt LGUI ESC
       >;
     };
 
