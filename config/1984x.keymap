@@ -162,8 +162,8 @@
     num_layer {
       bindings = <
    &kp N1           &j2u_2           &kp N3           &kp N4           &kp N5                   &j2u_6           &j2u_7           &j2u_8           &j2u_9           &j2u_0
-   &kp LCTRL        &kp TAB          &none            &kp LC(LA(DEL))  &none                    &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp RA(RSFT)
-   &kp LSFT         &kp F2           &kp F3           &kp F4           &kp F5                   &kp F11          &kp F12          &none            &none            &kp RA(RCTL)
+   &kp LS(LALT)     &kp LA(TAB)      &kp BSPC         &kp LC(LA(DEL))  &kp DEL                  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &kp F4
+   &kp LSFT         &kp LS(LCTL)     &kp LCTL         &kp LA(LCTL)     &kp LALT                 &kp F11          &kp F12          &kp F2           &kp F3           &kp F5
                                      &trans           &trans           &trans                   &kp LS(ENTER)    &trans           &trans
       >;
     };
