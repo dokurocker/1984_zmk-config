@@ -80,11 +80,15 @@
         ;
     };
 
-    alttab_off: alttab_off {
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
+    lha: layer_has_alttab {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
       bindings
-        = <&macro_release &kp LALT &mo ALTTAB>
+        = <&macro_param_1to1>
+        , <&macro_press &mo MACRO_PLACEHOLDER>
+        , <&macro_pause_for_release>
+        , <&macro_param_1to1>
+        , <&macro_release &kp LALT &mo MACRO_PLACEHOLDER &mo ALTTAB>
         ;
     };
   };
@@ -168,6 +172,15 @@
       mods = <(MOD_LCTL|MOD_RCTL)>;
     };
 
+    lt_at: lt_alttab {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&lha>, <&kp>;
+      display-name = "Layer-Tap";
+    };
+  
   };
 
   keymap {
@@ -178,7 +191,7 @@
    &dq_SQT          &dq_COMMA        &dq_DOT          &dq_P            &dq_Y                    &dq_F            &dq_G            &dq_C            &dq_R           &dq_L
    &kp A            &dq_O            &dq_E            &dq_U            &i_del                   &d_bspc          &dq_H            &dq_T            &dq_N           &dq_S
    &dq_SEMI         &dq_Q            &dq_J            &dq_K            &dq_X                    &dq_B            &kp M            &dq_W            &dq_V           &dq_Z
-                                     &mt LALT TAB     &lt NUM INT5     &mt LCTRL SPACE          &mt LSHFT ENTER  &lt SYMBOL INT4  &mt LGUI ESC
+                                     &mt LALT TAB     &lt_at NUM INT5  &mt LCTRL SPACE          &mt LSHFT ENTER  &lt SYMBOL INT4  &mt LGUI ESC
       >;
     };
 
