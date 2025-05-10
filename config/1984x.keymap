@@ -87,7 +87,7 @@
         = <&macro_param_1to1>
         , <&macro_press &mo MACRO_PLACEHOLDER>
         , <&macro_pause_for_release>
-        , <&macro_tap &kp A>
+        , <&macro_tap &none>
         , <&macro_release &kp LALT>
         , <&macro_tap &kp B>
         , <&macro_tap &to DEFAULT>
