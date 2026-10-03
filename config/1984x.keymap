@@ -22,9 +22,9 @@
 // 共通定義
 #define CAT_I1(A, B) A ## B
 #define CAT1(A, B) CAT1_I(A, B)
-#define CAT_I2(A, B) #A " " #B // スペース区切りで連結
+#define CAT_I2(A, B) A B // スペース区切りで連結
 #define CAT2(A, B) CAT2_I(A, B)
-#define KP(KEY) CAT2(&kp, KEY)
+#define KP(KEY) &kp KEY
 
 // JIS配列からUS配列
 // 2(@) : shiftが他のキー（他 6 等）
