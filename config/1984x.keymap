@@ -318,7 +318,7 @@
       bindings = <&lha>, <&kp>;
     };
   
-    DVORAK_JP(C, K, N)
+    DVORAKJP(C, K, N)
   };
 
   keymap {
