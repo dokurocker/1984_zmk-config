@@ -118,7 +118,7 @@
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
-      = <KP(CONSONANT)> \
+      = <&kp CONSONANT> \
       , <&macro_param_1to1> \
       , <&macro_press &kp MACRO_PLACEHOLDER> \
       , <&kp N &kp N> \
