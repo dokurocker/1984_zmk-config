@@ -96,78 +96,60 @@
   };
 
 #define DVORAKJP_MACRO(CONSONANT) \
-  // 二重母音拡張
-  DVORAKJP_NIJUBOIN(CONSONANT, &kp CONSONANT)) \
-  // ゃ行（拗音）+二重母音拡張
-  DVORAKJP_NIJUBOIN(CAT1(CONSONANT, Y), CAT2(KP(CONSONANT), KP(Y))) \
-  // ぁ行+二重母音拡張
-  DVORAKJP_NIJUBOIN(CAT1(CONSONANT, W), CAT2(KP(CONSONANT), KP(W))) \
-  // っ（促音）+二重母音拡張
-  DVORAKJP_NIJUBOIN(CAT1(CONSONANT, CONSONANT), CAT2(KP(CONSONANT), KP(CONSONANT))) \
-  // っ（促音）+ゃ行（拗音）+二重母音拡張
-  DVORAKJP_NIJUBOIN(CAT1(CONSONANT, CONSONANT), CAT2(CAT2(KP(CONSONANT), KP(CONSONANT)), KP(Y))) \
-  // っ（促音）+ぁ行（拗音）+二重母音拡張
-  DVORAKJP_NIJUBOIN(CAT1(CONSONANT,CONSONANT), CAT2(CAT2(KP(CONSONANT), KP(CONSONANT)), KP(W))) \
-  // ゃ行（拗音）
   m_djp_##CONSONANTY: macro_dvorakjp_##CONSONANTY { \
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
-      = <KP(CONSONANT) KP(Y)> \
+      = <&kp CONSONANT &kp Y> \
       , <&macro_param_1to1> \
-      , <&macro_press KP(MACRO_PLACEHOLDER)> \
+      , <&macro_press &kp MACRO_PLACEHOLDER> \
       ; \
   }; \
-  // っ（促音）+ゃ行（拗音）
   m_djp_##CONSONANT##CONSONANTY: macro_dvorakjp_##CONSONANT##CONSONANTY {
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
-      = <KP(CONSONANT) KP(CONSONANT) KP(Y)> \
+      = <&kp CONSONANT &kp CONSONANT &kp Y> \
       , <&macro_param_1to1> \
-      , <&macro_press KP(MACRO_PLACEHOLDER)> \
+      , <&macro_press &kp MACRO_PLACEHOLDER> \
       ; \
   }; \
-  // 撥音拡張
   m_djp_##CONSONANTXN: macro_dvorakjp_##CONSONANTXN { \
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
       = <KP(CONSONANT)> \
       , <&macro_param_1to1> \
-      , <&macro_press KP(MACRO_PLACEHOLDER)> \
-      , <KP(N) KP(N)> \
+      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp N &kp N> \
       ; \
   }; \
-  // ぁ行（拗音）
   m_djp_##CONSONANTW: macro_dvorakjp_##CONSONANTW { \
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
-      = <KP(CONSONANT) KP(W)> \
+      = <&kp CONSONANT &kp W> \
       , <&macro_param_1to1> \
-      , <&macro_press KP(MACRO_PLACEHOLDER)> \
+      , <&macro_press &kp MACRO_PLACEHOLDER> \
       ; \
   }; \
-  // っ（促音）+ぁ行
   m_djp_##CONSONANT##CONSONANTW: macro_dvorakjp_##CONSONANT##CONSONANTW {
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
-      = <KP(CONSONANT) KP(CONSONANT) KP(W)> \
+      = <&kp CONSONANT &kp CONSONANT &kp W> \
       , <&macro_param_1to1> \
-      , <&macro_press KP(MACRO_PLACEHOLDER)> \
+      , <&macro_press &kp MACRO_PLACEHOLDER> \
       ; \
   }; \
-  // 促音+撥音拡張
   m_djp_##CONSONANT##CONSONANTXN: macro_dvorakjp_##CONSONANT##CONSONANTXN { \
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
-      = <KP(CONSONANT) KP(CONSONANT)> \
+      = <&kp CONSONANT &kp CONSONANT> \
       , <&macro_param_1to1> \
-      , <&macro_press KP(MACRO_PLACEHOLDER)> \
-      , <KP(N) KP(N)> \
+      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp N &kp N> \
       ; \
   };
 
@@ -175,36 +157,6 @@
   djp_##KEY: dvorakjp_##KEY { \
     compatible = "zmk,behavior-leader-key"; \
     \#binding-cells = <0>; \
-    ai { sequence = <##KEY SQT>; bindings = <&m_djp_##CONSONANTAI>; }; \
-    ou { sequence = <##KEY COMMA>; bindings = <&m_djp_##CONSONANTOU>; }; \
-    ei { sequence = <##KEY DOT>; bindings = <&m_djp_##CONSONANTEI>; }; \
-    uu { sequence = <##KEY P>; bindings = <&m_djp_##CONSONANTUU>; }; \
-    ui { sequence = <##KEY Y>; bindings = <&m_djp_##CONSONANTUI>; }; \
-    yai { sequence = <##KEY ##YKEY SQT>; bindings = <&m_djp_##CONSONANTYAI>; }; \
-    you { sequence = <##KEY ##YKEY COMMA>; bindings = <&m_djp_##CONSONANTYOU>; }; \
-    yei { sequence = <##KEY ##YKEY DOT>; bindings = <&m_djp_##CONSONANTYEI>; }; \
-    yuu { sequence = <##KEY ##YKEY P>; bindings = <&m_djp_##CONSONANTYUU>; }; \
-    yui { sequence = <##KEY ##YKEY Y>; bindings = <&m_djp_##CONSONANTYUI>; }; \
-    wai { sequence = <##KEY W SQT>; bindings = <&m_djp_##CONSONANTWAI>; }; \
-    wou { sequence = <##KEY W COMMA>; bindings = <&m_djp_##CONSONANTWOU>; }; \
-    wei { sequence = <##KEY W DOT>; bindings = <&m_djp_##CONSONANTWEI>; }; \
-    wuu { sequence = <##KEY W P>; bindings = <&m_djp_##CONSONANTWUU>; }; \
-    wui { sequence = <##KEY W Y>; bindings = <&m_djp_##CONSONANTWUI>; }; \
-    xtuai { sequence = <##KEY ##KEY SQT>; bindings = <&m_djp_##CONSONANT##CONSONANTAI>; }; \
-    xtuou { sequence = <##KEY ##KEY COMMA>; bindings = <&m_djp_##CONSONANT##CONSONANTOU>; }; \
-    xtuei { sequence = <##KEY ##KEY DOT>; bindings = <&m_djp_##CONSONANT##CONSONANTEI>; }; \
-    xtuuu { sequence = <##KEY ##KEY P>; bindings = <&m_djp_##CONSONANT##CONSONANTUU>; }; \
-    xtuui { sequence = <##KEY ##KEY Y>; bindings = <&m_djp_##CONSONANT##CONSONANTUI>; }; \
-    xtuyai { sequence = <##KEY ##KEY ##YKEY SQT>; bindings = <&m_djp_##CONSONANT##CONSONANTYAI>; }; \
-    xtuyou { sequence = <##KEY ##KEY ##YKEY COMMA>; bindings = <&m_djp_##CONSONANT##CONSONANTYOU>; }; \
-    xtuyei { sequence = <##KEY ##KEY ##YKEY DOT>; bindings = <&m_djp_##CONSONANT##CONSONANTYEI>; }; \
-    xtuyuu { sequence = <##KEY ##KEY ##YKEY P>; bindings = <&m_djp_##CONSONANT##CONSONANTYUU>; }; \
-    xtuyui { sequence = <##KEY ##KEY ##YKEY Y>; bindings = <&m_djp_##CONSONANT##CONSONANTYUI>; }; \
-    xtuwai { sequence = <##KEY ##KEY W SQT>; bindings = <&m_djp_##CONSONANT##CONSONANTWAI>; }; \
-    xtuwou { sequence = <##KEY ##KEY W COMMA>; bindings = <&m_djp_##CONSONANT##CONSONANTWOU>; }; \
-    xtuwei { sequence = <##KEY ##KEY W DOT>; bindings = <&m_djp_##CONSONANT##CONSONANTWEI>; }; \
-    xtuwuu { sequence = <##KEY ##KEY W P>; bindings = <&m_djp_##CONSONANT##CONSONANTWUU>; }; \
-    xtuwui { sequence = <##KEY ##KEY W Y>; bindings = <&m_djp_##CONSONANT##CONSONANTWUI>; }; \
     ya { sequence = <##KEY ##YKEY A>; bindings = <&m_djp_##CONSONANTY A>; }; \
     yi { sequence = <##KEY ##YKEY I>; bindings = <&m_djp_##CONSONANTY I>; }; \
     yu { sequence = <##KEY ##YKEY U>; bindings = <&m_djp_##CONSONANTY U>; }; \
