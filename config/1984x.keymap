@@ -133,7 +133,7 @@
       , <&macro_press &kp MACRO_PLACEHOLDER> \
       ; \
   }; \
-  m_djp_##CONSONANT##CONSONANTW: macro_dvorakjp_##CONSONANT##CONSONANTW {
+  m_djp_##CONSONANT##CONSONANTW: macro_dvorakjp_##CONSONANT##CONSONANTW { \
     compatible = "zmk,behavior-macro-one-param"; \
     \#binding-cells = <1>; \
     bindings \
