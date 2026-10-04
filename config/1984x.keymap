@@ -157,36 +157,36 @@
   djp_##KEY: dvorakjp_##KEY { \
     compatible = "zmk,behavior-leader-key"; \
     \#binding-cells = <0>; \
-    ya { sequence = <##KEY YKEY A>; bindings = <&m_djp_##CONSONANTY A>; }; \
-    yi { sequence = <##KEY YKEY I>; bindings = <&m_djp_##CONSONANTY I>; }; \
-    yu { sequence = <##KEY YKEY U>; bindings = <&m_djp_##CONSONANTY U>; }; \
-    ye { sequence = <##KEY YKEY E>; bindings = <&m_djp_##CONSONANTY E>; }; \
-    yo { sequence = <##KEY YKEY O>; bindings = <&m_djp_##CONSONANTY O>; }; \
-    wa { sequence = <##KEY W A>; bindings = <&m_djp_##CONSONANTW A>; }; \
-    wi { sequence = <##KEY W I>; bindings = <&m_djp_##CONSONANTW I>; }; \
-    wu { sequence = <##KEY W U>; bindings = <&m_djp_##CONSONANTW U>; }; \
-    we { sequence = <##KEY W E>; bindings = <&m_djp_##CONSONANTW E>; }; \
-    wo { sequence = <##KEY W O>; bindings = <&m_djp_##CONSONANTW O>; }; \
-    xtuya { sequence = <##KEY KEY YKEY A>; bindings = <&m_djp_##CONSONANT##CONSONANTY A>; }; \
-    xtuyi { sequence = <##KEY KEY YKEY I>; bindings = <&m_djp_##CONSONANT##CONSONANTY I>; }; \
-    xtuyu { sequence = <##KEY KEY YKEY U>; bindings = <&m_djp_##CONSONANT##CONSONANTY U>; }; \
-    xtuye { sequence = <##KEY KEY YKEY E>; bindings = <&m_djp_##CONSONANT##CONSONANTY E>; }; \
-    xtuyo { sequence = <##KEY KEY YKEY O>; bindings = <&m_djp_##CONSONANT##CONSONANTY O>; }; \
-    xtuwa { sequence = <##KEY KEY W A>; bindings = <&m_djp_##CONSONANT##CONSONANTW A>; }; \
-    xtuwi { sequence = <##KEY KEY W I>; bindings = <&m_djp_##CONSONANT##CONSONANTW I>; }; \
-    xtuwu { sequence = <##KEY KEY W U>; bindings = <&m_djp_##CONSONANT##CONSONANTW U>; }; \
-    xtuwe { sequence = <##KEY KEY W E>; bindings = <&m_djp_##CONSONANT##CONSONANTW E>; }; \
-    xtuwo { sequence = <##KEY KEY W O>; bindings = <&m_djp_##CONSONANT##CONSONANTW O>; }; \
-    an { sequence = <##KEY SEMI>; bindings = <&m_djp_##CONSONANTXN A>; }; \
-    in { sequence = <##KEY Q>; bindings = <&m_djp_##CONSONANTXN I>; }; \
-    un { sequence = <##KEY J>; bindings = <&m_djp_##CONSONANTXN U>; }; \
-    en { sequence = <##KEY K>; bindings = <&m_djp_##CONSONANTXN E>; }; \
-    on { sequence = <##KEY X>; bindings = <&m_djp_##CONSONANTXN O>; }; \
-    xtuan { sequence = <##KEY KEY W SEMI>; bindings = <&m_djp_##CONSONANT##CONSONANTXN A>; }; \
-    xtuin { sequence = <##KEY KEY W Q>; bindings = <&m_djp_##CONSONANT##CONSONANTXN I>; }; \
-    xtuun { sequence = <##KEY KEY W J>; bindings = <&m_djp_##CONSONANT##CONSONANTXN U>; }; \
-    xtuen { sequence = <##KEY KEY W K>; bindings = <&m_djp_##CONSONANT##CONSONANTXN E>; }; \
-    xtuon { sequence = <##KEY KEY W X>; bindings = <&m_djp_##CONSONANT##CONSONANTXN O>; }; \
+    ya { sequence = <##YKEY A>; bindings = <&m_djp_##CONSONANTY A>; }; \
+    yi { sequence = <##YKEY I>; bindings = <&m_djp_##CONSONANTY I>; }; \
+    yu { sequence = <##YKEY U>; bindings = <&m_djp_##CONSONANTY U>; }; \
+    ye { sequence = <##YKEY E>; bindings = <&m_djp_##CONSONANTY E>; }; \
+    yo { sequence = <##YKEY O>; bindings = <&m_djp_##CONSONANTY O>; }; \
+    wa { sequence = <W A>; bindings = <&m_djp_##CONSONANTW A>; }; \
+    wi { sequence = <W I>; bindings = <&m_djp_##CONSONANTW I>; }; \
+    wu { sequence = <W U>; bindings = <&m_djp_##CONSONANTW U>; }; \
+    we { sequence = <W E>; bindings = <&m_djp_##CONSONANTW E>; }; \
+    wo { sequence = <W O>; bindings = <&m_djp_##CONSONANTW O>; }; \
+    xtuya { sequence = <##KEY YKEY A>; bindings = <&m_djp_##CONSONANT##CONSONANTY A>; }; \
+    xtuyi { sequence = <##KEY YKEY I>; bindings = <&m_djp_##CONSONANT##CONSONANTY I>; }; \
+    xtuyu { sequence = <##KEY YKEY U>; bindings = <&m_djp_##CONSONANT##CONSONANTY U>; }; \
+    xtuye { sequence = <##KEY YKEY E>; bindings = <&m_djp_##CONSONANT##CONSONANTY E>; }; \
+    xtuyo { sequence = <##KEY YKEY O>; bindings = <&m_djp_##CONSONANT##CONSONANTY O>; }; \
+    xtuwa { sequence = <##KEY W A>; bindings = <&m_djp_##CONSONANT##CONSONANTW A>; }; \
+    xtuwi { sequence = <##KEY W I>; bindings = <&m_djp_##CONSONANT##CONSONANTW I>; }; \
+    xtuwu { sequence = <##KEY W U>; bindings = <&m_djp_##CONSONANT##CONSONANTW U>; }; \
+    xtuwe { sequence = <##KEY W E>; bindings = <&m_djp_##CONSONANT##CONSONANTW E>; }; \
+    xtuwo { sequence = <##KEY W O>; bindings = <&m_djp_##CONSONANT##CONSONANTW O>; }; \
+    an { sequence = <SEMI>; bindings = <&m_djp_##CONSONANTXN A>; }; \
+    in { sequence = <Q>; bindings = <&m_djp_##CONSONANTXN I>; }; \
+    un { sequence = <J>; bindings = <&m_djp_##CONSONANTXN U>; }; \
+    en { sequence = <K>; bindings = <&m_djp_##CONSONANTXN E>; }; \
+    on { sequence = <X>; bindings = <&m_djp_##CONSONANTXN O>; }; \
+    xtuan { sequence = <##KEY W SEMI>; bindings = <&m_djp_##CONSONANT##CONSONANTXN A>; }; \
+    xtuin { sequence = <##KEY W Q>; bindings = <&m_djp_##CONSONANT##CONSONANTXN I>; }; \
+    xtuun { sequence = <##KEY W J>; bindings = <&m_djp_##CONSONANT##CONSONANTXN U>; }; \
+    xtuen { sequence = <##KEY W K>; bindings = <&m_djp_##CONSONANT##CONSONANTXN E>; }; \
+    xtuon { sequence = <##KEY W X>; bindings = <&m_djp_##CONSONANT##CONSONANTXN O>; }; \
   };
 
 / {
@@ -326,7 +326,7 @@
 
     default_layer {
       bindings = <
-   &dq_SQT          &dq_COMMA        &dq_DOT          &dq_P            &dq_Y                    &dq_F            &dq_G            &dq_C            &dq_R           &dq_L
+   &dq_SQT          &dq_COMMA        &dq_DOT          &dq_P            &dq_Y                    &dq_F            &dq_G            &djp_C            &dq_R           &dq_L
    &kp A            &dq_O            &dq_E            &dq_U            &i_del                   &d_bspc          &dq_H            &dq_T            &dq_N           &dq_S
    &dq_SEMI         &dq_Q            &dq_J            &dq_K            &dq_X                    &dq_B            &kp M            &dq_W            &dq_V           &dq_Z
                                      &mt LALT TAB     &lt_at NUM INT5  &mt LCTRL SPACE          &mt LSHFT ENTER  &lt SYMBOL INT4  &mt LGUI ESC
