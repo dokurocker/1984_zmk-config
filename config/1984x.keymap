@@ -102,7 +102,7 @@
     bindings \
       = <&kp CONSONANT &kp Y> \
       , <&macro_param_1to1> \
-      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp MACRO_PLACEHOLDER> \
       ; \
   }; \
   m_djp_##CONSONANT##CONSONANTY: macro_dvorakjp_##CONSONANT##CONSONANTY { \
@@ -111,7 +111,7 @@
     bindings \
       = <&kp CONSONANT &kp CONSONANT &kp Y> \
       , <&macro_param_1to1> \
-      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp MACRO_PLACEHOLDER> \
       ; \
   }; \
   m_djp_##CONSONANTXN: macro_dvorakjp_##CONSONANTXN { \
@@ -120,7 +120,7 @@
     bindings \
       = <&kp CONSONANT> \
       , <&macro_param_1to1> \
-      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp MACRO_PLACEHOLDER> \
       , <&kp N &kp N> \
       ; \
   }; \
@@ -130,7 +130,7 @@
     bindings \
       = <&kp CONSONANT &kp W> \
       , <&macro_param_1to1> \
-      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp MACRO_PLACEHOLDER> \
       ; \
   }; \
   m_djp_##CONSONANT##CONSONANTW: macro_dvorakjp_##CONSONANT##CONSONANTW { \
@@ -139,7 +139,7 @@
     bindings \
       = <&kp CONSONANT &kp CONSONANT &kp W> \
       , <&macro_param_1to1> \
-      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp MACRO_PLACEHOLDER> \
       ; \
   }; \
   m_djp_##CONSONANT##CONSONANTXN: macro_dvorakjp_##CONSONANT##CONSONANTXN { \
@@ -148,7 +148,7 @@
     bindings \
       = <&kp CONSONANT &kp CONSONANT> \
       , <&macro_param_1to1> \
-      , <&macro_press &kp MACRO_PLACEHOLDER> \
+      , <&kp MACRO_PLACEHOLDER> \
       , <&kp N &kp N> \
       ; \
   };
